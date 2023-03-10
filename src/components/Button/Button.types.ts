@@ -4,5 +4,5 @@ export interface ButtonProps {
   children: string,
   items: ItemArrays,
   sentenceEn: string,
-  handleClick: any
+  handleClick: (items: ItemArrays, sentenceEn:string)=> void
 }
