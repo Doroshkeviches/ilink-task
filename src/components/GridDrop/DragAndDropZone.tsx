@@ -8,7 +8,7 @@ import { css } from '@emotion/css';
 
 interface DragProps {
     // TODO: fix any type
-    items: any
+    items: ItemArrays
     setItems: (item: ItemArrays) => void
     setSentenceEn: Dispatch<SetStateAction<string |undefined>>
     setIsAnswerTrue: Dispatch<SetStateAction<boolean | undefined>>
@@ -39,8 +39,8 @@ const DragAndDropZone: React.FC<DragProps> = ({ items,
         setIsAnswerTrue(undefined)
         if (targetId) {
             const result = move(
-              items[sourceId],
-              items[targetId],
+              items[sourceId as keyof ItemArrays],
+              items[targetId as keyof ItemArrays],
               sourceIndex,
               targetIndex
             );
@@ -61,7 +61,7 @@ const DragAndDropZone: React.FC<DragProps> = ({ items,
                 )
             }
         }
-        const result = swap(items[sourceId], sourceIndex, targetIndex);
+        const result = swap(items[sourceId as keyof ItemArrays], sourceIndex, targetIndex);
 
         if (sourceId === 'left') {
             return setItems({
