@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from './components/Button/Button';
 import HeaderText from './components/HeaderText/HeaderText';
 import Question from './components/Question/Question';
-import './styles/style.css'
 import { useTts } from 'tts-react'
 import type { TTSHookProps } from 'tts-react'
 import DragAndDropZone from './components/GridDrop/DragAndDropZone';
