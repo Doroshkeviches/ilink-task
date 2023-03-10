@@ -17,7 +17,7 @@ export interface ItemArrays {
 }
 
 
-export const arraySort = (arr: any[]) => arr.sort((a, b) => a.id - b.id)
+export const arraySort = (arr: Phrase[]) => arr.sort((a, b) => a.id - b.id)
 
 export const createPhraseArray = (string: string) => {
     const array = string.split(' ')
@@ -27,7 +27,7 @@ export const createPhraseArray = (string: string) => {
         name: item
     }))
 }
-function App(this: any) {
+function App() {
     type SpeakProps = Pick<TTSHookProps, 'children'>
     const Speak = ({ children }: SpeakProps) => (
         <>{useTts({ lang: 'en', children, autoPlay: true }).ttsChildren}</>

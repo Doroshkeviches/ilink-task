@@ -7,7 +7,6 @@ import DragAndDropGridZone from './DragAndDropGridZone';
 import { css } from '@emotion/css';
 
 interface DragProps {
-    // TODO: fix any type
     items: ItemArrays
     setItems: (item: ItemArrays) => void
     setSentenceEn: Dispatch<SetStateAction<string |undefined>>
